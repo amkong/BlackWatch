@@ -19,12 +19,10 @@ client.on('message', msg => {
   // check message starts with !
   if (msg.content.startsWith(prefix)) {
       // strip message of !
-      let message = msg.content.replace(/!/g, '');
-      console.log('message: ', message);
+      let message = msg.content.replace(/!/g, '').toLowerCase();
 
       // preparer
       let result = commonUtil._prepare(message);
-      console.log('results: ', result);
       msg.reply(result);
   }
 
