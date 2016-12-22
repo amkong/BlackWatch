@@ -16,8 +16,7 @@ describe('Client', () => {
     it('should create a client', (done) => {
       var client = new Discord.Client();
       client.on('ready', () => {
-        if (err) done(err);
-        else done();
+        // how to check the bot is ready?
       })
     })
   })

@@ -1,5 +1,4 @@
 const Discord           = require('discord.js');
-const randomUtils       = require('./utils/random-utils.js');
 const commonUtil        = require('./utils/common-util.js');
 
 const client  = new Discord.Client();
@@ -7,7 +6,7 @@ const Token   = 'MjUxMjA5NDQxNzA0MjgwMDc3.CzsZjQ.zz8y-OqJtJk6_BeOHSaTyOwuCYE';
 
 
 client.on('ready', () => {
-  console.log('I am ready!');
+  console.log('Blackwatch is keeping an eye on you...');
 })
 
 client.on('message', msg => {
@@ -22,13 +21,7 @@ client.on('message', msg => {
       let message = msg.content.replace(/!/g, '').toLowerCase();
 
       // preparer
-      let result = commonUtil._prepare(message);
-      msg.reply(result);
-  }
-
-  // coin flip
-  function coinFlip () {
-
+      return commonUtil._prepare(message, client, msg);
   }
 
   // tests
